@@ -35,3 +35,31 @@ extension SomeNSClass {
 //     its always message dispatch in extensions of NSObject
     }
 }
+
+// >>
+// Retroactive modeling
+protocol RandomNum {
+    func getRandomName() -> Int
+}
+
+class View: UIView {
+    let label = UILabel()
+}
+
+extension View: RandomNum {
+    func getRandomName() -> Int {
+        Int.random(in: 0...10)
+    }
+}
+
+struct Dog {
+    let nickname = "Putin"
+}
+
+extension Dog: RandomNum {
+    func getRandomName() -> Int {
+        Int.random(in: 0...10)
+    }
+}
+
+let retroactiveArray: [RandomNum] = [View(), Dog()]
