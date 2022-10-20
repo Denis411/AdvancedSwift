@@ -43,4 +43,6 @@ enum TypealiasEnum: AssociatedProtocol {
     typealias NumericType = Int
 }
 
-
+extension Sequence where Element: Numeric {
+    func someFunc() { }
+}
