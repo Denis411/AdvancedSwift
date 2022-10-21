@@ -16,3 +16,8 @@ struct FailabelStruct {
         self.num = num
     }
 }
+
+// Dependent type cuz has another type inside
+struct DependentStruct {
+    let dependency: FailabelStruct
+}
