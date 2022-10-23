@@ -35,3 +35,14 @@ if case .some(let x) = someOptional {
 if case let x? = someOptional {
     print(x)
 }
+
+let emoji: StaticString = "\u{1F600}"
+emoji.hasPointerRepresentation  //-> true
+emoji.isASCII                   //-> false
+emoji.unicodeScalar             //-> Fatal error!
+emoji.utf8CodeUnitCount         //-> 4
+emoji.utf8Start[0]              //-> 0xF0
+emoji.utf8Start[1]              //-> 0x9F
+emoji.utf8Start[2]              //-> 0x98
+emoji.utf8Start[3]              //-> 0x80
+emoji.utf8Start[4]              //-> 0x00
