@@ -6,5 +6,6 @@
         <page name='Some'/>
         <page name='Types'/>
         <page name='PhantomType'/>
+        <page name='CustomOperators'/>
     </pages>
 </playground>
